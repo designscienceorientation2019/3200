@@ -246,14 +246,14 @@
             }
 
             // Judges
-            else if ((uniqname=="mreed") || (uniqname=="elenac") || (uniqname="seifert")) {
+            else if ((uniqname=="mreed") || (uniqname=="elenac") || (uniqname=="seifert")) {
                 document.getElementById("input-form").style="display: none;";
                 document.getElementById("message").innerHTML +="<p>Hello " + username +",</p>";
                 document.getElementById("message").innerHTML += nonpartMsg;
                 console.log("judges");
             }
 
-            else if (uniqname!="mreed") {
+            else {
                 document.getElementById("input-form").innerHTML += errorMsg;
                 console.log("error");
             }
@@ -265,12 +265,12 @@
         <div id="container">
             <div id="div">
                 <div class="spacer"></div>
-                <form id="input-form">
+                <form id="input-form" onsubmit="returnGroup();">
                     Welcome to the Design Science Orientation 2019 Design Challenge!<br>
                     <br>
                     Please enter your uniqname (all lowercase):<br/>
                     <input id="input-field" type="text" name="uniqname"><br/>
-                    <input id="submit-button" type="button" value="Submit" onclick="returnGroup();">
+                    <input id="submit-button" type="submit" value="Submit">
                 </form>
                 <div id="message"></div>
                 <div class="spacer"></div>
