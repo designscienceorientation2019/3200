@@ -242,6 +242,7 @@
                 document.getElementById("input-form").style="display: none;";
                 document.getElementById("message").innerHTML +="<p>Hello " + username +",</p>";
                 document.getElementById("message").innerHTML += optionMsg;
+                console.log("continuing");
             }
 
             // Judges
@@ -249,10 +250,12 @@
                 document.getElementById("input-form").style="display: none;";
                 document.getElementById("message").innerHTML +="<p>Hello " + username +",</p>";
                 document.getElementById("message").innerHTML += nonpartMsg;
+                console.log("judges");
             }
 
             else {
                 document.getElementById("input-form").innerHTML += errorMsg;
+                console.log("error");
             }
         }
     </script>
