@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="index.css">
+        <title>3200</title>
+    </head>
+
+    <script>
+        var optionMsg=
+                "<p>The challenge is to design a class that you would want to take.<br>" +
+                "Please select one of the following options and let the facilitator know:<br>" +
+                "<br>" +
+                "(1) Join an incoming student team and assist them in this design challenge.<br>" +
+                "<br>" +
+                "(2) Assemble a team of continuing students to participate in<br>" +
+                    "this design challenge, but you won't be eligible to win.<br>" +
+                "<br>" +
+                "(3) Be a member of the panel for judging this design challenge.<br>" +
+                "<br>" +
+                "<br>" +
+                "The full design challenge prompt is available at this link:<br>" +
+                "<a href='http://bit.ly/designchallengeprompt'>bit.ly/designchallengeprompt</a></p>"
+        var errorMsg="<p id='error'>Please enter a valid uniqname.</p>";
+        var nonpartMsg=
+                "<p>The challenge is to design a class that you would want to take.<br>" +
+                "You will be a member of the panel for judging this design challenge.<br>" +
+                "The facilitator will inform you of your responsibilities.<br>" +
+                "<br>" +
+                "The full design challenge prompt is available at this link:<br>" +
+                "<a href='http://bit.ly/designchallengeprompt'>bit.ly/designchallengeprompt</a></p>";
+        
+        function returnGroup() {
+            var uniqname=document.getElementsByName("uniqname")[0].value;
+            var username="";
+            switch(uniqname) {
+                case "alondraa":
+                    username="Alondra";
+                    break;
+                case "bonbonj":
+                    username="Bonnie";
+                    break;
+                case "bgokul":
+                    username="Brinda";
+                    break;
+                case "djsantos":
+                    username="David";
+                    break;
+                case "emdoug":
+                    username="Emily";
+                    break;
+                case "feiqigu":
+                    username="Feiqi";
+                    break;
+                case "gburl":
+                    username="Grace";
+                    break;
+                case "hrdavis":
+                    username="Hugh";
+                    break;
+                case "lrmurphy":
+                    username="Laura";
+                    break;
+                case "makeo":
+                    username="Makenzie";
+                    break;
+                case "najamed":
+                    username="Naja";
+                    break;
+                case "smendke":
+                    username="Samarth";
+                    break;
+                case "hanxy":
+                    username="Xinying";
+                    break;
+                case "xieyuh":
+                    username="Yuheng";
+                    break;
+                case "zabulhab":
+                    username="Zena";
+                    break;
+                case "wzichen":
+                    username="Zichen";
+                    break;
+                case "mpirone":
+                    username="Matt";
+                    break;
+                case "cpuder":
+                    username="Christina";
+                    break;
+                case "chrisrc":
+                    username="Chris";
+                    break;
+                case "kmcantil":
+                    username="Kaylla";
+                    break;
+                case "jvelleu":
+                    username="Jesse";
+                    break;
+                case "abhirama":
+                    username="Abhishek";
+                    break;
+                case "cplezama":
+                    username="Chris";
+                    break;
+                case "gera":
+                    username="Gerardo";
+                    break;
+                case "hanleela":
+                    username="Han";
+                    break;
+                case "jnemeg":
+                    username="Juan";
+                    break;
+                case "lavergne":
+                    username="Lisa";
+                    break;
+                case "mroses":
+                    username="Maggie";
+                    break;
+                case "pbrautig":
+                    username="Patrick";
+                    break;
+                case "shahsami":
+                    username="Samir";
+                    break;
+                case "rsanjana":
+                    username="Sanjana";
+                    break;
+                case "shrutis":
+                    username="Shruti";
+                    break;
+                case "huxinhui":
+                    username="Xinhui";
+                    break;
+                case "hymanzxc":
+                    username="Xucong";
+                    break;
+                case "irodri":
+                    username="Ilka";
+                    break;
+                case "jmeluso":
+                    username="John";
+                    break;
+                case "bkoray":
+                    username="Koray";
+                    break;
+                case "mjcoul":
+                    username="Marianna";
+                    break;
+                case "mnelso":
+                    username="Matt";
+                    break;
+                case "meira":
+                    username="Meira";
+                    break;
+                case "seameyer":
+                    username="Sean";
+                    break;
+                case "melodyku":
+                    username="Melody";
+                    break;
+                case "acollopy":
+                    username="Aria";
+                    break;
+                case "greenemt":
+                    username="Melissa";
+                    break;
+                case "mreed":
+                    username="Matt";
+                    break;
+                case "elenac":
+                    username="Elena";
+                    break;
+                case "seifert":
+                    username="Colleen";
+                    break;
+                default:
+                    break;
+            }
+
+            // Reset to clear messages
+            document.getElementById("div").innerHTML=
+                "<div class='spacer'></div>" +
+                "<form id='input-form' onsubmit='returnGroup();'>" +
+                    "Welcome to the Design Science Orientation 2019 Design Challenge!<br>" +
+                    "<br>" +
+                    "Please enter your uniqname (all lowercase):<br/>" +
+                    "<input id='input-field' type='text' name='uniqname'><br/>" +
+                    "<input id='submit-button' type='submit'>" +
+                "</form>" +
+                "<div id='message'></div>" +
+                "<div class='spacer'></div>";
+
+            // Participating incoming students
+            if ((uniqname=="lrmurphy") || (uniqname=="djsantos") || (uniqname=="wzichen")) {
+                document.getElementById("input-form").style="display: none;";
+                document.getElementById("message").innerHTML +="<p>Hello " + username +",</p>";
+                document.getElementById("message").innerHTML +="<p>Please proceed to this area of the 2nd floor to receive further instructions:</p>";
+                document.getElementById("message").innerHTML +="<img class='location' src='group1.png'>";
+            }
+            else if ((uniqname=="emdoug") || (uniqname=="zabulhab") || (uniqname=="hanxy")) {
+                document.getElementById("input-form").style="display: none;";
+                document.getElementById("message").innerHTML +="<p>Hello " + username +",</p>";
+                document.getElementById("message").innerHTML +="<p>Please proceed to this area of the 2nd floor to receive further instructions:</p>";
+                document.getElementById("message").innerHTML +="<img class='location' src='group2.png'>";
+            }
+            else if ((uniqname=="smendke") || (uniqname=="gburl") || (uniqname=="feiqigu")) {
+                document.getElementById("input-form").style="display: none;";
+                document.getElementById("message").innerHTML +="<p>Hello " + username +",</p>";
+                document.getElementById("message").innerHTML +="<p>Please proceed to this area of the 2nd floor to receive further instructions:</p>";
+                document.getElementById("message").innerHTML +="<img class='location' src='group3.png'>";
+            }
+            else if ((uniqname=="xieyuh") || (uniqname=="hrdavis") || (uniqname=="bgokul")) {
+                document.getElementById("input-form").style="display: none;";
+                document.getElementById("message").innerHTML +="<p>Hello " + username +",</p>";
+                document.getElementById("message").innerHTML +="<p>Please proceed to this area of the 2nd floor to receive further instructions:</p>";
+                document.getElementById("message").innerHTML +="<img class='location' src='group4.png'>";
+            }
+            else if ((uniqname=="bonbonj") || (uniqname=="makeo") || (uniqname=="najamed") || (uniqname=="alondraa")) {
+                document.getElementById("input-form").style="display: none;";
+                document.getElementById("message").innerHTML +="<p>Hello " + username +",</p>";
+                document.getElementById("message").innerHTML +="<p>Please proceed to this area of the 2nd floor to receive further instructions:</p>";
+                document.getElementById("message").innerHTML +="<img class='location' src='group5.png'>";
+            }
+
+            // Continuing students select option
+            else if ((uniqname=="cpuder") || (uniqname=="chrisrc") || (uniqname=="kmcantil") ||
+                (uniqname=="jvelleu") ||  (uniqname=="abhirama") || (uniqname=="cplezama") ||
+                (uniqname=="gera") || (uniqname=="hanleela") || (uniqname=="jnemeg") ||
+                (uniqname=="lavergne") || (uniqname=="mroses") || (uniqname=="pbrautig") ||
+                (uniqname=="shahsami") || (uniqname=="rsanjana") || (uniqname=="shrutis") ||
+                (uniqname=="huxinhui") || (uniqname=="hymanzxc") ||
+                (uniqname=="irodri") || (uniqname=="jmeluso") ||
+                (uniqname=="bkoray") || (uniqname=="mjcoul") || (uniqname=="mnelso") ||
+                (uniqname=="meira") || (uniqname=="seameyer") || (uniqname=="melodyku") ||
+                (uniqname=="acollopy") || (uniqname=="greenemt") || (uniqname=="mpirone")) {
+                document.getElementById("input-form").style="display: none;";
+                document.getElementById("message").innerHTML +="<p>Hello " + username +",</p>";
+                document.getElementById("message").innerHTML += optionMsg;
+            }
+
+            // Judges
+            else if ((uniqname=="mreed") || (uniqname=="elenac") || (uniqname="seifert")) {
+                document.getElementById("input-form").style="display: none;";
+                document.getElementById("message").innerHTML +="<p>Hello " + username +",</p>";
+                document.getElementById("message").innerHTML += nonpartMsg;
+            }
+
+            else {
+                document.getElementById("input-form").innerHTML += errorMsg;
+            }
+        }
+    </script>
+
+    <body>
+        <img id="logo" src="logo.png">
+        <div id="container">
+            <div id="div">
+                <div class="spacer"></div>
+                <form id="input-form" onsubmit="returnGroup();">
+                    Welcome to the Design Science Orientation 2019 Design Challenge!<br>
+                    <br>
+                    Please enter your uniqname (all lowercase):<br/>
+                    <input id="input-field" type="text" name="uniqname"><br/>
+                    <input id="submit-button" type="submit">
+                </form>
+                <div id="message"></div>
+                <div class="spacer"></div>
+            </div>
+        </div>
+    </body>
+</html>
